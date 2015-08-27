@@ -1,0 +1,22 @@
+Nomes: Ana Flávia, Jennifer e Sarah.
+
+PROJETO MASTER GAME
+
+Nosso projeto visa à criação de um website para matemática, onde o objetivo é um treino para o Enem.
+O professor convidado é a professora Mariângela Andrade Martinatto, que leciona matemática para os primeiros e quartos anos.
+O website irá funcionar da seguinte maneira:
+
+- Primeiramente, o usuário deverá fazer seu cadastro, logo em seguida ele será redirecionado para o acesso local;
+- O acesso local irá mostrar uma escolha para o usuário, onde ele poderá escolher qual ano irá avaliar seus conhecimentos;
+- Cada ano terá três subníveis de dificuldade: fácil, médio e difícil;
+- Após ele escolher o ano ele deverá escolher o subnível de dificuldade das questões de matemática;
+- Em seguida, começarão a aparecer, pergunta por pergunta, que o usuário deverá responder dentro do limite de tempo, que irá variar de acordo com o subnível de que ele está redirecionado;
+- Cada pergunta certa que o usuário responder ele ganhará 10 pontos, somando no total de 70 pontos;
+- No final, aparecerá uma mensagem para o usuário de que se ele acertou de 40 pontos para cima ele pode avançar o nível, e se ele passou por todos os subníveis de todos os anos, irá aparecer uma mensagem dizendo que o usuário está pronto para a prova de matemática do Enem;
+- O Timer do jogo irá variar de nível para nível: No nível mais fácil o usuário poderá responder a prova em 3 minutos, no nível médio em 4 minutos e no nível difícil em 5 minutos;
+- Caso o usuário erre a questão, nosso website irá mostrar a forma correta de resolução e mais curiosidades sobre o assunto tratado no problema;
+- Em questão de designer, abaixo da página estará disponível fórmulas matemáticas, para auxiliar o usuário durante a resolução das questões;
+- Outro detalhe, será um contador de quantos dias faltam para o Enem;
+- E para que a mensagem de aptidão para a prova de matemática do Enem seja mostrada para o usuário, ele terá que cumprir todos os níveis e subníveis de dificuldade do website;
+
+A professora Mariângela concordou em disponibilizar sete perguntas para cada subnível de dificuldade, que segundo ela serão questões semelhantes com as que já caíram nas provas.
