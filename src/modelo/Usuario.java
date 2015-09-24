@@ -4,10 +4,11 @@ import java.io.File;
 import java.io.FileWriter;
 
 public class Usuario {
-	public String login;
-	public String senha;
-	public String email;
-	public int numero;
+	private String login;
+	private String senha;
+	private String email;
+	private int numero;
+	
 	public Usuario(int n,String l, String s , String e){
 		login = l;
 		senha = s;
@@ -16,10 +17,7 @@ public class Usuario {
 	}
 	
 	public Usuario(){
-		login = null;
-		senha=null;
-		email=null;
-		numero=0;
+
 	}
 
 	public String getLogin() {
