@@ -1,9 +1,9 @@
 package web;
 
 import modelo.Usuario;
+import controlador.CadastroControlador;
 import controlador.Concluido;
 import controlador.ControladorCadastro;
-import controlador.ListaControlador;
 import controlador.PaginaInicialControlador;
 import controlador.SalvaControlador;
 import spark.Spark;
@@ -19,19 +19,22 @@ public class Main {
 		 //onde ficam os HTML's.
 		 MustacheTemplateEngine engine = new MustacheTemplateEngine("apresentacao"); //responsável pelo HTML. 
 		 
-		 PaginaInicialControlador home = new PaginaInicialControlador();
-		 ControladorCadastro ControladorCadastro = new ControladorCadastro();
-		 SalvaControlador salvaControlador = new SalvaControlador();
-		 ListaControlador listaControlador = new ListaControlador();
-		 Concluido concluido = new Concluido();
+		ControladorCadastro ControladorCadastro = new ControladorCadastro();
+		SalvaControlador salvaControlador = new SalvaControlador();
+	    Concluido concluido = new Concluido();
+	    
+	    CadastroControlador cadastroControlador = new CadastroControlador();
+
+	     PaginaInicialControlador paginaInicial = new PaginaInicialControlador();
+	
+		Spark.get("/home", paginaInicial, engine);
 		 
-		  //get ou post (get quando vai ler informações; post para submeter informações). -rotas
-		 Spark.get("/",home,engine); 
-		 Spark.get("/",ControladorCadastro,engine); //abrir o form.
-		 Spark.post("/salva",salvaControlador,engine); //submissão do form.
-		 Spark.get("/concluido", concluido,engine);
-		 Spark.get("/lista", listaControlador, engine);
-		  
+		Spark.post("/salvo",salvaControlador,engine); //submissão do form.
+		Spark.get("/concluido", concluido,engine);
+		Spark.post("/cadastra", cadastroControlador,engine);
+		
 
 	}
+		
+		
 }

@@ -4,20 +4,22 @@ import java.io.File;
 import java.io.FileWriter;
 
 public class Usuario {
-	private String login;
-	private String senha;
-	private String email;
-	private int numero;
-	
+	public String login;
+	public String senha;
+	public String email;
+	public int matricula;
 	public Usuario(int n,String l, String s , String e){
 		login = l;
 		senha = s;
 		email = e;
-		numero=n;
+		matricula=n;
 	}
 	
 	public Usuario(){
-
+		login = null;
+		senha=null;
+		email=null;
+		matricula=0;
 	}
 
 	public String getLogin() {
@@ -44,19 +46,19 @@ public class Usuario {
 		this.email = email;
 	}
 
-	public int getNumero() {
-		return numero;
+	public int getMatricula() {
+		return matricula;
 	}
 
-	public void setNumero(int numero) {
-		this.numero = numero;
+	public void setMatricula(int matricula) {
+		this.matricula = matricula;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + numero;
+		result = prime * result + matricula;
 		return result;
 	}
 
@@ -69,7 +71,7 @@ public class Usuario {
 		if (getClass() != obj.getClass())
 			return false;
 		Usuario other = (Usuario) obj;
-		if (numero != other.numero)
+		if (matricula != other.matricula)
 			return false;
 		return true;
 	}
@@ -77,12 +79,12 @@ public class Usuario {
 	@Override
 	public String toString() {
 		return "Usuario [login=" + login + ", senha=" + senha + ", email="
-				+ email + ", numero=" + numero + "]";
+				+ email + ", matricula=" + matricula + "]";
 	}
 	
 	public String toCSV() {
 		StringBuilder builder = new StringBuilder();
-		builder.append(numero);
+		builder.append(matricula);
 		builder.append(";");
 		builder.append(login);
 		builder.append(";");
@@ -94,7 +96,7 @@ public class Usuario {
 
 	public void fromCSV(String row) {
 		String[] columns = row.split(";");
-		this.setNumero(Integer.parseInt(columns[0]));
+		this.setMatricula(Integer.parseInt(columns[0]));
 		this.setLogin(columns[1]);
 		this.setEmail(columns[2]);
 		this.setSenha(columns[3]);
