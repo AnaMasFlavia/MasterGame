@@ -1,0 +1,18 @@
+Projeto Master Game.
+
+Objetivos concluídos:
+- O desenvolvimento teórico do programa;
+- Salvar e listar todos os usuários;
+- Metade dos exercícios que serão usados no jogo estão resolvidos.
+
+Objetivos a fazer:
+- Criar o web design do jogo;
+- Desenvolver o funcionamento dele, isto é, funcionalidade do jogo;
+- Criar a função para cadastrar usuários, com função de excluir a sua conta e somar os pontos;
+- Subir os exercícios para o jogo e as curiosidades matemáticas;
+- Mostrar mensagens de acertos e de atenção.
+
+Objetivos extras:
+- Criar um contador para o enem;
+- Ver os pontos acumulados;
+- Timer do jogo.

@@ -1,7 +1,10 @@
 package persistencia;
 
 import java.io.File;
+<<<<<<< HEAD
 import java.io.FileNotFoundException;
+=======
+>>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,6 +14,7 @@ import modelo.Usuario;
 public class UsuarioDAO implements DAO<Usuario> {
 	ArrayList<Usuario> filme = new ArrayList();
 	
+<<<<<<< HEAD
 	Usuario usuario = new Usuario();
 
 	public void fromCSV(String row) {
@@ -24,6 +28,11 @@ public class UsuarioDAO implements DAO<Usuario> {
 	public void save(Usuario object) {
 		try {
 			File u = new File("src/usuarios.csv");
+=======
+	public void save(Usuario object) {
+		try {
+			File u = new File("src/apresentacao/usuarios.csv");
+>>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
 			FileWriter arq = new FileWriter(u, true);
 
 			arq.append(object.toCSV() + "\n");
@@ -33,6 +42,7 @@ public class UsuarioDAO implements DAO<Usuario> {
 			e.printStackTrace();
 		}
 	}
+<<<<<<< HEAD
 	
 	public boolean findByLogin(Usuario us){
 		File arquivo = new File("src/" + us + ".csv");
@@ -84,3 +94,8 @@ public class UsuarioDAO implements DAO<Usuario> {
 		
 	}
 
+=======
+		
+
+}
+>>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18

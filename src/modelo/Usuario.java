@@ -81,6 +81,10 @@ public class Usuario {
 		return "Usuario [login=" + login + ", senha=" + senha + ", email="
 				+ email + ", matricula=" + matricula + "]";
 	}
+<<<<<<< HEAD
+=======
+	
+>>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
 	public String toCSV() {
 		StringBuilder builder = new StringBuilder();
 		builder.append(matricula);
@@ -93,4 +97,16 @@ public class Usuario {
 		return builder.toString();
 	}
 
+<<<<<<< HEAD
+=======
+	public void fromCSV(String row) {
+		String[] columns = row.split(";");
+		this.setMatricula(Integer.parseInt(columns[0]));
+		this.setLogin(columns[1]);
+		this.setEmail(columns[2]);
+		this.setSenha(columns[3]);
+
+	}
+
+>>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
 }

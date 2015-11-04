@@ -18,6 +18,10 @@ public class SalvaControlador implements TemplateViewRoute{
 		usuario.setSenha(req.queryMap("senha").value());
 		dao.save(usuario);
 		resp.redirect("/concluido");
+<<<<<<< HEAD
 		return new ModelAndView(null,"teste.html");
+=======
+		return new ModelAndView(null,"salvando.html");
+>>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
 	}
 }

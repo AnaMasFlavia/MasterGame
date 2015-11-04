@@ -19,9 +19,15 @@ public class CadastroControlador implements TemplateViewRoute {
 		usuario.setSenha(req.queryMap("senha").value());
 		dao.save(usuario);
 	
+<<<<<<< HEAD
 		resp.redirect("/concluido");
 		
 		return new ModelAndView(null,"concluido.html");
+=======
+		resp.redirect("/cadastra");
+		
+		return new ModelAndView(null,"teste.html");
+>>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
 	}
 
 }
