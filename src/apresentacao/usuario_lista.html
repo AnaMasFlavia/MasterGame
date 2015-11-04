@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Master Game</title>
+	</head>
+	
+	<body>
+		<h2 align= "center"> Lista de Usuários Cadastrados: </h2>
+	</body>
+	<table>
+		<thead>
+			<tr>
+				<th>Matricula</th>
+				<th>Login</th>
+				<th>Email</th>
+				<th>Senha</th>
+			</tr>
+		</thead>
+			<tbody>
+			{{#usuario}}
+				<tr>
+					<td>{{matricula}}</td>
+					<td>{{login}}</td>
+					<td>{{email}}</td>
+					<td>{{senha}}</td>
+				</tr>
+			{{/usuario}}
+			</tbody>
+	</table>
+	
+	<br>
+	<a href="/home">Retornar ao inicio</a>
+	
+</html>
