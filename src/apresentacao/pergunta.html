@@ -1,0 +1,35 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- viewport = faz todas páginas ficarem com o mesmo tamanho de zoom.
+	UTF-8 serve para traduzir os acentos.-->
+	<meta charset="UTF-8">
+	<title>Master Game</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css"> <!-- "estilo" eh livre.-->
+
+</head>
+<body>
+	<h1 align="center" class="vermelho">Master Gamer</h1>
+	<h2  align="center" class="negrito">
+		<marquee>
+			Teste-me se for capaz: torne-se o Mestre do jogo!
+		</marquee>
+	</h2>
+	
+ {{#pergunta}}
+ 	<form method="POST" action= "/enviarRespostas">
+		{{pergunta}} <br>
+		<input type="radio" name="resposta" value="{{resposta1}}">{{resposta1}}<br>
+		<input type="radio" name="resposta" value="{{resposta2}}">{{resposta2}}<br>
+		<input type="radio" name="resposta" value="{{resposta3}}">{{resposta3}}<br>
+		<input type="radio" name="resposta" value="{{resposta4}}">{{resposta4}}<br>
+		
+		<input type="submit" name="Enviar">
+
+	</form>
+ 	
+ 	
+ {{/pergunta}}
+
+</body>
+</html>
