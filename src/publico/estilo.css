@@ -2,6 +2,13 @@ h1 {
 	font-size: 60pt;
 	font-family: "Arial", "Verdana";
 	text-align: center;
+	/*
+	border: 10px solid #069;
+	background-color: #daf6d1;
+	width: 6em;
+	height: 2.5em;
+	*/
+	
 } p{
 	margin-left: 10px;
 }
@@ -24,6 +31,13 @@ h1.vermelho{
 
 fieldset {
   border: 1px solid #cecfd5;
-  border-radius: 3px;
-  padding: 20px 15px;
+  border-radius: 1px;
+  padding: 20px 5px;
+}
+body{
+
+	background-image: url(logo.jpg) ;
+	background-repeat: no-repeat;
+	background-position: 640px 430px;
+	
 }

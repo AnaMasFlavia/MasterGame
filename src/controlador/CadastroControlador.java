@@ -1,5 +1,7 @@
 package controlador;
 
+import java.io.IOException;
+
 import persistencia.UsuarioDAO;
 import modelo.Usuario;
 import spark.ModelAndView;
@@ -17,17 +19,18 @@ public class CadastroControlador implements TemplateViewRoute {
 		usuario.setLogin(req.queryMap("login").value());
 		usuario.setEmail(req.queryMap("email").value());
 		usuario.setSenha(req.queryMap("senha").value());
-		dao.save(usuario);
+		req.session().attribute("login", req.queryMap("login").value());
+		
+		try {
+			dao.save(usuario);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	
-<<<<<<< HEAD
 		resp.redirect("/concluido");
 		
-		return new ModelAndView(null,"concluido.html");
-=======
-		resp.redirect("/cadastra");
-		
 		return new ModelAndView(null,"teste.html");
->>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
 	}
 
 }

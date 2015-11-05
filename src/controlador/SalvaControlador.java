@@ -1,5 +1,7 @@
 package controlador;
 
+import java.io.IOException;
+
 import modelo.Usuario;
 import persistencia.UsuarioDAO;
 import spark.ModelAndView;
@@ -16,12 +18,12 @@ public class SalvaControlador implements TemplateViewRoute{
 		usuario.setLogin(req.queryMap("login").value());
 		usuario.setEmail(req.queryMap("email").value());
 		usuario.setSenha(req.queryMap("senha").value());
-		dao.save(usuario);
+		try {
+			dao.save(usuario);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		resp.redirect("/concluido");
-<<<<<<< HEAD
 		return new ModelAndView(null,"teste.html");
-=======
-		return new ModelAndView(null,"salvando.html");
->>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
 	}
 }

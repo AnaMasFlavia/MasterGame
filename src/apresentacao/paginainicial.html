@@ -4,7 +4,7 @@
 	<!-- viewport = faz todas páginas ficarem com o mesmo tamanho de zoom.
 	UTF-8 serve para traduzir os acentos.-->
 	<meta charset="UTF-8">
-	<title>Master Game</title>
+	<title>Master Game </title>
 	<link rel="stylesheet" type="text/css" href="estilo.css"> <!-- "estilo" eh livre.-->
 
 </head>
@@ -16,54 +16,51 @@
 		</marquee>
 	</h2>
 
-	<form method="post" action="/cadastra">
-			<br>
-			<input type="number" name="matricula"
-			placeholder = "Numero de matricula" autofocus>
-			
-			<br>
-			<input type="text" name="login"
-				placeholder = "Login de usuario">
-				
-			<br>	
-			<input type="text" name="email"
-				placeholder = "Email do usuario">
-				
-			<br>	
-			<input type="password" name="senha"
-				placeholder= "Senha">
-				
-			<br>	
-			<input type="Submit" value="Cadastrar">
-			
-		</form>
-
-		<h4>Se já és cadastrado entre agora mesmo:</h4>
-
-<<<<<<< HEAD
-<form method="post" action="/login">
-=======
->>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
-		<fieldset>
+	    <fieldset style="width: 50%">
+	  		<legend>Entrar:</legend><br />
 			  <label>
-			    Login:
+			    Login:<br />
 			    <input type="text" name="login">
-			  </label>
+			  </label><br />
 			  <label>
-			    Password:
+			    Senha:<br />
 			    <input type="password" name="senha">
-			  </label>
+			  </label><br />
 
 			  <input type="Submit" value="Entrar">
+			</fieldset> 
+
+		<form method="post" action="/cadastra">
+			<br>
+			<fieldset style="width: 50% ">
+				<legend>Cadastre-se:</legend>
+					
+					<label for="number">
+					 Número de Matrícula:<br /> 
+					<input type="number" name="matricula" min="1" placeholder = "Numero de matricula" autofocus>
+					</label><br />
+					
+					<label for="text">
+					 Login:<br />
+					<input type="text" name="login" placeholder = "Login de usuario">		
+					</label><br />
+					
+					<label for="text">
+					 Email:<br />
+					<input type="text" name="email" placeholder = "Email do usuario">		
+					</label><br />	
+					
+					<label for="password">
+					 Senha:<br />
+					<input type="password" name="senha" placeholder= "Senha">		
+					</label><br />
+	
+					<input type="Submit" value="Cadastrar">
 			</fieldset>
-<<<<<<< HEAD
-</form>
-=======
+		</form>
 
 
 
-
->>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
 	<!-- embora funcione não é recomendado fazer desse jeito.-->
 
 </body>

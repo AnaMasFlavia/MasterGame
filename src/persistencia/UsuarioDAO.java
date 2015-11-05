@@ -1,11 +1,9 @@
 package persistencia;
 
 import java.io.File;
-<<<<<<< HEAD
 import java.io.FileNotFoundException;
-=======
->>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,7 +12,6 @@ import modelo.Usuario;
 public class UsuarioDAO implements DAO<Usuario> {
 	ArrayList<Usuario> filme = new ArrayList();
 	
-<<<<<<< HEAD
 	Usuario usuario = new Usuario();
 
 	public void fromCSV(String row) {
@@ -25,43 +22,48 @@ public class UsuarioDAO implements DAO<Usuario> {
 		usuario.setSenha(columns[3]);
 	}
 	
-	public void save(Usuario object) {
-		try {
-			File u = new File("src/usuarios.csv");
-=======
-	public void save(Usuario object) {
-		try {
-			File u = new File("src/apresentacao/usuarios.csv");
->>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
-			FileWriter arq = new FileWriter(u, true);
-
-			arq.append(object.toCSV() + "\n");
-			arq.flush();
-			arq.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-<<<<<<< HEAD
 	
-	public boolean findByLogin(Usuario us){
-		File arquivo = new File("src/" + us + ".csv");
-		if ( ! arquivo.exists()) { 
+	public void save(Usuario u) throws IOException {
+		if(u.getLogin()!=null&&u.getEmail()!=null&&u.getMatricula()!=0&&u.getSenha()!=null){
 			
+			File arq = new File("usuarios");
+			
+			if(!arq.exists()){
+				arq.mkdir();
+			}
+			
+			u.toCSV();
+			
+			File file = new File("usuarios/" + u.getLogin() + ".csv");
+			if(file.exists())return;	
+			FileWriter writer = new FileWriter(file);
+			writer.write(u.toCSV().toString());
+			writer.flush();
+			writer.close();
+			
+		}
+		
+	}
+	
+	public boolean findByLogin(String login){
+		File arq = new File("usuarios/" + login + ".csv");
+		if ( ! arq.exists()) { 
 			return false;
 		}
 		try {
-			Scanner scan = new Scanner(arquivo);
+			Scanner scan = new Scanner(arq);
 			while(scan.hasNextLine()) {
-				String row = scan.nextLine();
-				fromCSV(row);
+				String verifica = scan.nextLine();
+				fromCSV(verifica);
 			}
 			scan.close();
 
-			if(us.getLogin() == usuario.getLogin()) {
+			if(login.equals(usuario.getLogin())) {
+				return false;
+			} else {
 				return true;
 			}
-			return false;
+		
 				
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -89,13 +91,8 @@ public class UsuarioDAO implements DAO<Usuario> {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				return lista; // tá salvando em um arquivo só
+				return lista;
 			}
 		
 	}
 
-=======
-		
-
-}
->>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
