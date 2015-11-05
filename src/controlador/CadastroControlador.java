@@ -1,23 +1,27 @@
 package controlador;
 
-import modelo.Usuario;
 import persistencia.UsuarioDAO;
+import modelo.Usuario;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 import spark.TemplateViewRoute;
 
-public class SalvaControlador implements TemplateViewRoute{
+public class CadastroControlador implements TemplateViewRoute {
 	private UsuarioDAO dao = new UsuarioDAO();
 
+	@Override
 	public ModelAndView handle(Request req, Response resp) {
 		Usuario usuario = new Usuario();
-		usuario.setNumero(req.queryMap("numero").integerValue());
+		usuario.setNumero(req.queryMap("matricula").integerValue());
 		usuario.setLogin(req.queryMap("login").value());
 		usuario.setEmail(req.queryMap("email").value());
 		usuario.setSenha(req.queryMap("senha").value());
 		dao.save(usuario);
-		resp.redirect("/concluido");
-		return new ModelAndView(null,"salvando.html");
+	
+		resp.redirect("/cadastra");
+		
+		return new ModelAndView(null,"teste.html");
 	}
+
 }

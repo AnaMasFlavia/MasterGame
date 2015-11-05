@@ -1,10 +1,14 @@
 package web;
 
 import modelo.Usuario;
+import controlador.CadastroControlador;
 import controlador.Concluido;
-import controlador.ControladorCadastro;
+import controlador.EscolherNivelControlador;
 import controlador.ListaControlador;
+import controlador.NiveisControlador;
 import controlador.PaginaInicialControlador;
+import controlador.PerguntasControlador;
+import controlador.RespostasControlador;
 import controlador.SalvaControlador;
 import spark.Spark;
 import spark.template.mustache.MustacheTemplateEngine;
@@ -19,19 +23,40 @@ public class Main {
 		 //onde ficam os HTML's.
 		 MustacheTemplateEngine engine = new MustacheTemplateEngine("apresentacao"); //responsável pelo HTML. 
 		 
-		 PaginaInicialControlador home = new PaginaInicialControlador();
-		 ControladorCadastro ControladorCadastro = new ControladorCadastro();
-		 SalvaControlador salvaControlador = new SalvaControlador();
-		 ListaControlador listaControlador = new ListaControlador();
-		 Concluido concluido = new Concluido();
+		SalvaControlador salvaControlador = new SalvaControlador();
+	    Concluido concluido = new Concluido();
+	    ListaControlador listaControlador = new ListaControlador();
+	    
+	    CadastroControlador cadastroControlador = new CadastroControlador();
+
+	    PaginaInicialControlador paginaInicial = new PaginaInicialControlador();
+	
+		Spark.get("/home", paginaInicial, engine);
 		 
-		  //get ou post (get quando vai ler informações; post para submeter informações). -rotas
-		 Spark.get("/",home,engine); 
-		 Spark.get("/",ControladorCadastro,engine); //abrir o form.
-		 Spark.post("/salva",salvaControlador,engine); //submissão do form.
-		 Spark.get("/concluido", concluido,engine);
-		 Spark.get("/lista", listaControlador, engine);
-		  
+		Spark.post("/salvo",salvaControlador,engine); //submissão do form.
+		Spark.get("/concluido", concluido,engine);
+		Spark.post("/cadastra", cadastroControlador,engine);
+		Spark.get("/lista", listaControlador, engine);
+		
+		NiveisControlador niveisControlador = new NiveisControlador();
+		
+		Spark.get("/niveis", niveisControlador, engine);
+		
+		EscolherNivelControlador escolherNivelControlador = new EscolherNivelControlador();
+		
+		Spark.get("/escolhe/:ano/:nivel", escolherNivelControlador,engine);
+		
+		PerguntasControlador perguntasControlador = new PerguntasControlador();
+		
+		Spark.get("/pergunta/:numero", perguntasControlador, engine);
+		
+		RespostasControlador respostasControlador = new RespostasControlador();
+		
+		Spark.post("/enviarRespostas", respostasControlador, engine);
+		
+		
 
 	}
+		
+		
 }
