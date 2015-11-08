@@ -23,7 +23,7 @@ public class UsuarioDAO implements DAO<Usuario> {
 	}
 	
 	
-	public void save(Usuario u) throws IOException {
+	public void save(Usuario u) {
 		if(u.getLogin()!=null&&u.getEmail()!=null&&u.getMatricula()!=0&&u.getSenha()!=null){
 			
 			File arq = new File("usuarios");
@@ -33,23 +33,28 @@ public class UsuarioDAO implements DAO<Usuario> {
 			}
 			
 			u.toCSV();
-			
+			try{
 			File file = new File("usuarios/" + u.getLogin() + ".csv");
 			if(file.exists())return;	
 			FileWriter writer = new FileWriter(file);
 			writer.write(u.toCSV().toString());
 			writer.flush();
 			writer.close();
+			}catch(Exception e ){
+				e.printStackTrace();
+			}
 			
 		}
 		
 	}
 	
-	public boolean findByLogin(String login){
+	public boolean existeLogin(String login){
 		File arq = new File("usuarios/" + login + ".csv");
-		if ( ! arq.exists()) { 
-			return false;
+		if (  arq.exists()) { 
+			return true;
 		}
+		return false;
+		/*
 		try {
 			Scanner scan = new Scanner(arq);
 			while(scan.hasNextLine()) {
@@ -59,9 +64,9 @@ public class UsuarioDAO implements DAO<Usuario> {
 			scan.close();
 
 			if(login.equals(usuario.getLogin())) {
-				return false;
-			} else {
 				return true;
+			} else {
+				return false;
 			}
 		
 				
@@ -69,6 +74,7 @@ public class UsuarioDAO implements DAO<Usuario> {
 			e.printStackTrace();
 		}
 		return true;
+		*/
 	}
 		//Método que avalia se existe um login existente, caso exista retorna usuario
 	

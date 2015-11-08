@@ -2,24 +2,10 @@ package web;
 
 import modelo.Usuario;
 import controlador.CadastroControlador;
-import controlador.Concluido;
-<<<<<<< HEAD
 import controlador.ListaControlador;
-import controlador.LoginControlador;
-=======
-<<<<<<< HEAD
 import controlador.EscolherNivelControlador;
-import controlador.ListaControlador;
 import controlador.NiveisControlador;
-=======
-import controlador.ControladorCadastro;
-<<<<<<< HEAD
-import controlador.ListaControlador;
 import controlador.LoginControlador;
-=======
->>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
->>>>>>> c6988d69c8892e77244d3d60f20c565f3884491f
->>>>>>> 8f1b020371f8a1c6b3c38ea955e59a4407eb1775
 import controlador.PaginaInicialControlador;
 import controlador.PerguntasControlador;
 import controlador.RespostasControlador;
@@ -36,58 +22,18 @@ public class Main {
 		 //precisa de um package apresentação (views).
 		 //onde ficam os HTML's.
 		MustacheTemplateEngine engine = new MustacheTemplateEngine("apresentacao"); //responsável pelo HTML. 
-		 
-<<<<<<< HEAD
-=======
-		 //precisa de um package apresentação (views).
-		 //onde ficam os HTML's.
-		 MustacheTemplateEngine engine = new MustacheTemplateEngine("apresentacao"); //responsável pelo HTML. 
->>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
-		 
-<<<<<<< HEAD
-		SalvaControlador salvaControlador = new SalvaControlador();
-	    Concluido concluido = new Concluido();
-	    ListaControlador listaControlador = new ListaControlador();
-	    
-	    CadastroControlador cadastroControlador = new CadastroControlador();
 
 	    PaginaInicialControlador paginaInicial = new PaginaInicialControlador();
-=======
-		ControladorCadastro ControladorCadastro = new ControladorCadastro();
->>>>>>> 8f1b020371f8a1c6b3c38ea955e59a4407eb1775
 		SalvaControlador salvaControlador = new SalvaControlador();
-	    Concluido concluido = new Concluido();
 	    CadastroControlador cadastroControlador = new CadastroControlador();
-	    PaginaInicialControlador paginaInicial = new PaginaInicialControlador();
 	    LoginControlador loginControlador = new LoginControlador();
-	    ListaControlador listaControlador = new ListaControlador();
 	
 		Spark.get("/home", paginaInicial, engine);
 		Spark.post("/cadastra", cadastroControlador,engine);
-		Spark.get("/concluido", concluido,engine);
 		
-		Spark.post("/login",loginControlador,engine);
-		
+		Spark.post("/login",loginControlador,engine);	
 		
 		Spark.post("/salvo",salvaControlador,engine); //submissão do form.
-		
-		
-<<<<<<< HEAD
-=======
-=======
-	    
-	    CadastroControlador cadastroControlador = new CadastroControlador();
-
-	     PaginaInicialControlador paginaInicial = new PaginaInicialControlador();
->>>>>>> c6988d69c8892e77244d3d60f20c565f3884491f
-	
-		Spark.get("/home", paginaInicial, engine);
-		 
-		Spark.post("/salvo",salvaControlador,engine); //submissão do form.
-		Spark.get("/concluido", concluido,engine);
-		Spark.post("/cadastra", cadastroControlador,engine);
-<<<<<<< HEAD
-		Spark.get("/lista", listaControlador, engine);
 		
 		NiveisControlador niveisControlador = new NiveisControlador();
 		
@@ -105,17 +51,6 @@ public class Main {
 		
 		Spark.post("/enviarRespostas", respostasControlador, engine);
 		
-=======
->>>>>>> cc4365e07a7a231b8c1b0d94a570dc2986ff2d18
->>>>>>> c6988d69c8892e77244d3d60f20c565f3884491f
->>>>>>> 8f1b020371f8a1c6b3c38ea955e59a4407eb1775
-		
+	}	
+}
 
-	}
-		
-		
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> c6988d69c8892e77244d3d60f20c565f3884491f
