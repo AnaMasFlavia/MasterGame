@@ -22,7 +22,7 @@ public class CadastroControlador implements TemplateViewRoute {
 		
 			UsuarioDAO dao = new UsuarioDAO();
 			//String login = req.session().attribute("login");
-			boolean usuarioExiste = dao.existeLogin(usuario.getLogin());
+			boolean usuarioExiste = dao.existeLogin(usuario.getLogin().trim());
 			System.out.println(usuarioExiste);
 			if (usuarioExiste == true){
 				return  new ModelAndView(null,"erro_login.html");	

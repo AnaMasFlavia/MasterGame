@@ -16,7 +16,7 @@ public class LoginControlador implements TemplateViewRoute {
 	public ModelAndView handle(Request req, Response resp) {
 		Usuario usuario = new Usuario();
 		UsuarioDAO dao = new UsuarioDAO();	
-		usuario.setLogin(req.queryMap("login").value());
+		usuario.setLogin(req.queryMap("login").value().trim());
 		usuario.setSenha(req.queryMap("senha").value());
 		
 		File file = new File("usuarios/" + usuario.getLogin() + ".csv");
