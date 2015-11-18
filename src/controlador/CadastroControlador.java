@@ -15,9 +15,7 @@ public class CadastroControlador implements TemplateViewRoute {
 	@Override
 	public ModelAndView handle(Request req, Response resp) {
 		Usuario usuario = new Usuario();
-		usuario.setMatricula(req.queryMap("matricula").integerValue());
 		usuario.setLogin(req.queryMap("login").value());
-		usuario.setEmail(req.queryMap("email").value());
 		usuario.setSenha(req.queryMap("senha").value());
 		req.session().attribute("login", req.queryMap("login").value());
 		

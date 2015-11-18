@@ -15,10 +15,7 @@ public class SalvaControlador implements TemplateViewRoute{
 	public ModelAndView handle(Request req, Response resp) {
 		Usuario usuario = new Usuario();
 
-
-		usuario.setMatricula(req.queryMap("matricula").integerValue());
 		usuario.setLogin(req.queryMap("login").value());
-		usuario.setEmail(req.queryMap("email").value());
 		usuario.setSenha(req.queryMap("senha").value());
 		try {
 			dao.save(usuario);
@@ -26,7 +23,7 @@ public class SalvaControlador implements TemplateViewRoute{
 			e.printStackTrace();
 		}
 		resp.redirect("/concluido");
-		return new ModelAndView(null,"teste.html");
+		return new ModelAndView(null,"concluido.html");
 
 
 
