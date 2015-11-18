@@ -12,8 +12,8 @@ public class EscolherNivelControlador implements TemplateViewRoute{
 		
 		int ano = Integer.parseInt(req.params("ano"));
 		String nivel = req.params("nivel");
-		int numero=1;
-		req.session().attribute("numero", numero);
+		//int numero=1;
+	//	req.session().attribute("numero", numero);
 	
 		req.session().attribute("ano", ano);
 		req.session().attribute("nivel", nivel);

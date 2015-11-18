@@ -5,7 +5,7 @@
 	UTF-8 serve para traduzir os acentos.-->
 	<meta charset="UTF-8">
 	<title>Master Game</title>
-	<link rel="stylesheet" type="text/css" href="estilo.css"> <!-- "estilo" eh livre.-->
+	<link rel="stylesheet" type="text/css" href="/estilo.css"> <!-- "estilo" eh livre.-->
 
 </head>
 <body>
@@ -19,6 +19,7 @@
  {{#pergunta}}
  	<form method="POST" action= "/enviarRespostas">
 		{{pergunta}} <br>
+	<input type="hidden" name="numero" value="{{numero}}">
 		<input type="radio" name="resposta" value="{{resposta1}}">{{resposta1}}<br>
 		<input type="radio" name="resposta" value="{{resposta2}}">{{resposta2}}<br>
 		<input type="radio" name="resposta" value="{{resposta3}}">{{resposta3}}<br>

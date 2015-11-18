@@ -1,14 +1,12 @@
 package persistencia;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public interface DAO <T> {
 	
 	//metódo para salvar:
-	public void save (T object)throws IOException ;
-	
+	public void save (T object);
 
-	public ArrayList<T> findAll();
-	
+	//encontra todos:
+	public ArrayList<T> findAll(); //ctr+shift+o importa rapidamente. 
 
 }
