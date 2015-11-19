@@ -1,22 +1,22 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- viewport = faz todas pÃ¡ginas ficarem com o mesmo tamanho de zoom.
+	<!-- viewport = faz todas páginas ficarem com o mesmo tamanho de zoom.
 	UTF-8 serve para traduzir os acentos.-->
 	<meta charset="UTF-8">
-	<title>Master Game </title>
+	<title>MASTER GAME </title>
 	<link rel="stylesheet" type="text/css" href="/estilo.css"> <!-- "estilo" eh livre.-->
 
 </head>
-<body>
-	<h1 align="center" class="vermelho">Master Gamer</h1>
+<body >
+	<h1 align="center" class="vermelho">MASTER GAME</h1>
 	<h2  align="center" class="negrito">
 		<marquee>
-			Teste-me se for capaz: torne-se o Mestre do jogo!
+			Teste-me se for capaz: torne-se o MESTRE do jogo!
 		</marquee>
 	</h2>
 	
-<form method="post" action="/login">
+<form method="post" action="/login" style="width: 200px;">
 		
 
 		<fieldset style="width: 50% ">
@@ -24,13 +24,13 @@
 
 			  <label>
 			    Login:<br />
-			    <input type="text" name="login">
+			    <input type="text" name="login" placeholder = "Login de usuario">
 			  </label><br />
 			  <label>
 			    Senha:<br />
-			    <input type="password" name="senha">
+			    <input type="password" name="senha" placeholder= "Senha">
 			  </label><br />
-
+				<br>
 			  <input type="Submit" value="Entrar">
 
 			</fieldset> 
@@ -38,9 +38,9 @@
 		</form>
 		
 		<div>
-		<form method="post" action="/cadastra" style="float:left;width:400px;">
+		<form method="post" action="/cadastra" style="float:left;width:200px;">
 			<br>
-			<fieldset style="width: 100% ">
+			<fieldset style="width: 156% ">
 				<legend>Cadastre-se:</legend>
 					
 					
@@ -53,12 +53,27 @@
 					 Senha:<br />
 					<input type="password" name="senha" placeholder= "Senha">		
 					</label><br />
-	
+					<br>
 					<input type="Submit" value="Cadastrar">
 			</fieldset>
 		</form>
-
-<img src='logo.jpg' style="float:right" />
+		
+<img src='logo.jpg' style="float:right ;margin-top: 175px;width:350px; margin-left:200px; " />
+<audio autoplay loop>
+		<source src="Jhon.mp3" type="audio/mpeg" >
+	</audio>
+</div>
+<div align="left">
+<fieldset style="float:left; width:50%; ">
+<legend>Como jogar:</legend>
+<h4>
+O Master Game é um jogo simples de perguntas e respostas, onde o objetivo é testar seus conhecimentos de matemática.<br />
+Para jogar :<br />
+ - Insira seu login e senha e caso não possua uma conta ainda, cadastre-se;<br />
+ - Após o cadastro , escolha um nível para jogar: entre fácil, médio e díficil do primeiro e segundo ano;<br />
+ - Encare 5 questões a cada nível e descubra se você é o Mestre do jogo!
+ </h4>
+ </fieldset>
 </div>
 </body>
 </html>
