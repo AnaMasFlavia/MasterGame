@@ -3,33 +3,44 @@
 
 	<head>
 		<meta charset="utf-8">
+		<title>MASTER GAME </title>
+		<link rel="stylesheet" type="text/css" href="/estilo.css">
 	</head>
 	
 	<body>
 
 		<h1> Cadastro realizado com sucesso! </h1>
 		
-		<h2>Comece a jogar: </h2>
 		
-		<form method="post" action="/login">
+		<form method="post" action="/login" style=width: 200px;">
+			<fieldset style="width: 15% ">
 			
-			<br>
+			<legend>Comece a jogar:</legend>
+			
+			<label>
 			<input type="text" name="login"
 				placeholder = "Login de usuario">
+				</label><br />
+				<br>
 				
-			<br>	
+			<label>	
 			<input type="password" name="senha"
 				placeholder= "Senha">
+			</label><br />
 				
-			<br>	
+			<br >
 			<input type="Submit" value="Entrar">
 			
 			<br>
-				
+			</fieldset>
 	 		<a href="/home">Retornar ao inicio</a>
 			
 		</form>
-		
+		<audio autoplay loop>
+		<source src="errou.wav" type="audio/mpeg" >
+	</audio>
 	</body>
 	
 </html>
+
+

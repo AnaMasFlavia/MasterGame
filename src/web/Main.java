@@ -6,7 +6,6 @@ import controlador.DerrotaControlador;
 import controlador.ErroEntrarControlador;
 import controlador.ErroLoginControlador;
 import controlador.EscolherNivelControlador;
-import controlador.ListaControlador;
 import controlador.LoginControlador;
 import controlador.NiveisControlador;
 import controlador.PaginaInicialControlador;
@@ -20,6 +19,7 @@ import spark.template.mustache.MustacheTemplateEngine;
 public class Main {
 	public static void main(String[] args) {
 		MustacheTemplateEngine engine = new MustacheTemplateEngine("apresentacao"); //responsável pelo HTML. 
+		Spark.staticFileLocation("/publico");
 
 	    PaginaInicialControlador paginaInicial = new PaginaInicialControlador();
 		SalvaControlador salvaControlador = new SalvaControlador();

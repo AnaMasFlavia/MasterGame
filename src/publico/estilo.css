@@ -43,4 +43,11 @@ body{
 	
 	
 }
+h1.borda{
+	border-style: dotted;
+	background-color: red;
+}
+h2.amarelo{
 
+
+}
