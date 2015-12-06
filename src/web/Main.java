@@ -18,8 +18,8 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class Main {
 	public static void main(String[] args) {
-		MustacheTemplateEngine engine = new MustacheTemplateEngine("apresentacao"); //responsável pelo HTML. 
 		Spark.staticFileLocation("/publico");
+		MustacheTemplateEngine engine = new MustacheTemplateEngine("apresentacao"); //responsável pelo HTML. 
 
 	    PaginaInicialControlador paginaInicial = new PaginaInicialControlador();
 		SalvaControlador salvaControlador = new SalvaControlador();
@@ -28,6 +28,7 @@ public class Main {
 	    ErroEntrarControlador erroEntrarControlador = new ErroEntrarControlador();
 	    ErroLoginControlador erroLoginControlador = new ErroLoginControlador();
 	    
+	    Spark.get("/", paginaInicial, engine);
 		Spark.get("/home", paginaInicial, engine);
 		Spark.post("/cadastra", cadastroControlador,engine);
 		

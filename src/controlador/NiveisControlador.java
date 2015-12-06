@@ -8,9 +8,6 @@ import spark.TemplateViewRoute;
 public class NiveisControlador implements TemplateViewRoute{
 
 	public ModelAndView handle(Request req, Response resp) {
-		
-		
-		
 		return new ModelAndView(null, "niveis.html");
 	}
 
