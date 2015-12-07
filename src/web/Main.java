@@ -63,10 +63,6 @@ public class Main {
 		DerrotaControlador derrotaControlador = new DerrotaControlador();
 		
 		Spark.get("/derrota", derrotaControlador, engine);
-		
-		
 
 	}
-		
-		
 }
